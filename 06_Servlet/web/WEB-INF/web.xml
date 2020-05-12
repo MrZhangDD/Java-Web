@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+<!--    servlet标签给tomcat配置servlet程序-->
+    <servlet>
+<!--        servlet-name 程序的别名-->
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>com.zhang.servlet.HelloServlet</servlet-class>
+        
+        <init-param>
+            <param-name>namespace</param-name>
+            <param-value>root</param-value>
+        </init-param>
+    
+    </servlet>
+<!--    servlet-mapping  给servlet程序配置访问地址-->
+    <servlet-mapping>
+<!--        servlet-name 告诉服务请当前配置的地址给哪个servlet使用-->
+        <servlet-name>helloServlet</servlet-name>
+
+<!--      / 表示工程路径 http://localhost:8080/工程名称
+        /hello  http://localhost:8080/工程名称/hello -->
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>helloServlet2</servlet-name>
+        <servlet-class>com.zhang.servlet.HelloServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloServlet2</servlet-name>
+        <url-pattern>/hello2</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>helloServlet3</servlet-name>
+        <servlet-class>com.zhang.servlet.HelloServlet3</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>helloServlet3</servlet-name>
+        <url-pattern>/hello3</url-pattern>
+    </servlet-mapping>
+
+    <!--context-param 是上下文参数属于整个web工程-->
+
+    <context-param>
+        <param-name>namespaceContext</param-name>
+        <param-value>helloContext</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>contextServlet</servlet-name>
+        <servlet-class>com.zhang.servlet.ContextServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>contextServlet</servlet-name>
+        <url-pattern>/contextServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>contextServlet1</servlet-name>
+        <servlet-class>com.zhang.servlet.ContextServlet1</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>contextServlet1</servlet-name>
+        <url-pattern>/contextServlet1</url-pattern>
+    </servlet-mapping>
+</web-app>
